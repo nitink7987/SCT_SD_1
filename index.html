@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="converter" aria-labelledby="title">
+      <div class="thermometer" aria-hidden="true">°</div>
+      <p class="eyebrow">QUICK CONVERSION</p>
+      <h1 id="title">Temperature Converter</h1>
+      <p class="subtitle">Convert temperatures with ease</p>
+
+      <form id="converter-form" novalidate>
+        <label for="temperature">Temperature</label>
+        <input id="temperature" name="temperature" type="number"
+               inputmode="decimal" step="any" placeholder="Enter a temperature"
+               autocomplete="off" aria-describedby="error-message">
+
+        <div class="unit-row">
+          <div class="field">
+            <label for="from-unit">From</label>
+            <select id="from-unit" name="from-unit">
+              <option value="Celsius" selected>Celsius (°C)</option>
+              <option value="Fahrenheit">Fahrenheit (°F)</option>
+              <option value="Kelvin">Kelvin (K)</option>
+            </select>
+          </div>
+          <span class="swap" aria-hidden="true">→</span>
+          <div class="field">
+            <label for="to-unit">To</label>
+            <select id="to-unit" name="to-unit">
+              <option value="Celsius">Celsius (°C)</option>
+              <option value="Fahrenheit" selected>Fahrenheit (°F)</option>
+              <option value="Kelvin">Kelvin (K)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="button button-primary" type="submit">
+            <span aria-hidden="true">↗</span> Convert
+          </button>
+          <button class="button button-secondary" id="reset-button" type="button">
+            <span aria-hidden="true">↻</span> Reset
+          </button>
+        </div>
+      </form>
+
+      <p class="error-message" id="error-message" role="alert" aria-live="polite"></p>
+      <div class="result" aria-live="polite" aria-atomic="true">
+        <span class="result-label">RESULT</span>
+        <output id="result">Your converted temperature will appear here</output>
+      </div>
+      <p class="footnote">Absolute zero is −273.15 °C</p>
+    </section>
+  </main>
+</body>
+</html>
